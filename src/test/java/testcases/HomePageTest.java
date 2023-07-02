@@ -5,6 +5,7 @@ import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -20,7 +21,12 @@ public class HomePageTest {
 		
 		WebDriverManager.chromedriver().setup();
 		
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+		
+		driver = new ChromeDriver(options);
 		
 		driver.get("http://localhost:8088/");
 		driver.manage().window().maximize();
