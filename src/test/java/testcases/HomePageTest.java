@@ -33,7 +33,7 @@ public class HomePageTest {
 		driver.manage().window().maximize();
 		
 		String Header = driver.findElement(By.tagName("h1")).getText();
-		AssertJUnit.assertEquals(Header, "Type your UserName Here");
+		AssertJUnit.assertEquals(Header, "Type your UserName Here for Vishals Chat Application");
 			
 	}
 	
